@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FitWithへのお問い合わせ - 製品導入、協業、取材などお気軽にご連絡ください">
+    <title>お問い合わせ | FitWith</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #ffffff;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 20px 40px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+            transform: scale(1.05);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        main {
+            margin-top: 80px;
+        }
+
+        footer {
+            background-color: #4a5568;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 16px;
+        }
+
+        .page-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 100px 20px 80px;
+            text-align: center;
+            color: white;
+        }
+
+        .page-hero h1 {
+            font-size: 56px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta {
+            padding: 120px 20px;
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 48px;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 30px;
+            line-height: 1.3;
+        }
+
+        .cta-message {
+            font-size: 22px;
+            color: #ffffff;
+            margin-bottom: 50px;
+            line-height: 1.8;
+        }
+
+        .contact-section {
+            padding: 100px 20px;
+            background-color: #ffffff;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+            margin-top: 60px;
+        }
+
+        .contact-main {
+            text-align: center;
+        }
+
+        .contact-sidebar {
+            text-align: left;
+        }
+
+        .contact-description {
+            font-size: 20px;
+            line-height: 1.8;
+            color: #4a5568;
+            margin-bottom: 50px;
+        }
+
+        .contact-email {
+            display: inline-block;
+            font-size: 32px;
+            font-weight: bold;
+            color: #2563eb;
+            text-decoration: none;
+            padding: 30px 50px;
+            background-color: #f0f9ff;
+            border-radius: 20px;
+            border: 3px solid #2563eb;
+            transition: all 0.3s;
+            margin-bottom: 40px;
+        }
+
+        .contact-email:hover {
+            background-color: #2563eb;
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+        }
+
+        .contact-info {
+            background-color: #f8f9fa;
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+
+        .contact-info h3 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+
+        .contact-info-list {
+            list-style: none;
+            font-size: 18px;
+            line-height: 2;
+            color: #4a5568;
+        }
+
+        .contact-info-list li {
+            padding: 5px 0;
+        }
+
+        .contact-info-list li::before {
+            content: "✓";
+            color: #48bb78;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            main {
+                margin-top: 150px;
+            }
+
+            .page-hero h1 {
+                font-size: 36px;
+            }
+
+            .cta-title {
+                font-size: 32px;
+            }
+
+            .cta-message {
+                font-size: 18px;
+            }
+
+            .contact-email {
+                font-size: 24px;
+                padding: 20px 30px;
+            }
+
+            .contact-description {
+                font-size: 18px;
+            }
+
+            .contact-info {
+                padding: 30px 20px;
+            }
+
+            .contact-layout {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .contact-sidebar {
+                text-align: center;
+            }
+        }
+
+        /* スクロールアニメーション */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">FitWith</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">トップページ</a></li>
+                    <li><a href="mission.html">私たちの想い</a></li>
+                    <li><a href="product.html">製品紹介</a></li>
+                    <li><a href="news.html">お知らせ</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero fade-in">
+            <h1>お問い合わせ</h1>
+        </section>
+
+        <section class="cta fade-in">
+            <div class="cta-container">
+                <h2 class="cta-title">一緒に、この未来を創りませんか？</h2>
+                <p class="cta-message">
+                    私たちは「すべての人が自由に移動できる世界」の実現に向け、この挑戦を加速させる仲間を探しています。製品開発をご支援いただける企業様、私たちのビジョンに共感し、協業の可能性を感じていただけた方。ぜひ、一度お話させてください。
+                </p>
+            </div>
+        </section>
+
+        <section class="contact-section fade-in">
+            <div class="contact-container">
+                <p class="contact-description">
+                    製品導入に関するご相談、協業のご提案、取材のお申し込みなど、お気軽にご連絡ください。
+                </p>
+
+                <div class="contact-layout">
+                    <div class="contact-main">
+                        <a href="mailto:contact@fitwith.example.com" class="contact-email">
+                            contact@fitwith.example.com
+                        </a>
+                    </div>
+
+                    <div class="contact-sidebar">
+                        <div class="contact-info">
+                            <h3>お問い合わせ内容について</h3>
+                            <ul class="contact-info-list">
+                                <li>製品導入のご相談</li>
+                                <li>協業・パートナーシップのご提案</li>
+                                <li>取材・メディアからのお問い合わせ</li>
+                                <li>投資・支援に関するご相談</li>
+                                <li>その他、製品・事業に関するお問い合わせ</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 FitWith. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const targets = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            targets.forEach(target => {
+                observer.observe(target);
+            });
+        });
+    </script>
+</body>
+</html>

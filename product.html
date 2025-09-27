@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FitWith Carry-Assist - 階段や段差の移動を安全にサポートする革新的な製品">
+    <title>製品情報：Carry-Assist | FitWith</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #ffffff;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 20px 40px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+            transform: scale(1.05);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        main {
+            margin-top: 80px;
+        }
+
+        footer {
+            background-color: #4a5568;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 16px;
+        }
+
+        .page-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 100px 20px 80px;
+            text-align: center;
+            color: white;
+        }
+
+        .page-hero h1 {
+            font-size: 56px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .product {
+            padding: 100px 20px;
+            background-color: #ffffff;
+        }
+
+        .product-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .product-title {
+            font-size: 48px;
+            font-weight: bold;
+            color: #1a202c;
+            margin-bottom: 60px;
+            line-height: 1.3;
+        }
+
+        .product-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background-color: #f8f9fa;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #2563eb;
+            border-radius: 50%;
+        }
+
+
+        .feature-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+
+        .feature-description {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #4a5568;
+        }
+
+        .testimonials-section {
+            padding: 100px 20px;
+            background-color: #f7fafc;
+        }
+
+        .testimonials-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .testimonials-title {
+            font-size: 48px;
+            font-weight: bold;
+            color: #1a202c;
+            margin-bottom: 50px;
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px auto;
+        }
+
+        .testimonial-card {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-quote {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-size: 16px;
+            color: #718096;
+            font-style: italic;
+        }
+
+        .market {
+            padding: 100px 20px;
+            background-color: #ffffff;
+        }
+
+        .market-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .market-title {
+            font-size: 48px;
+            font-weight: bold;
+            color: #1a202c;
+            margin-bottom: 60px;
+        }
+
+        .market-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 60px;
+            align-items: start;
+        }
+
+        .market-card {
+            background-color: #f8f9fa;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .market-card h3 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2563eb;
+            margin-bottom: 20px;
+        }
+
+        .market-card p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #4a5568;
+        }
+
+        .roadmap {
+            padding: 100px 20px;
+            background-color: #f7fafc;
+        }
+
+        .roadmap-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .roadmap-title {
+            font-size: 48px;
+            font-weight: bold;
+            color: #1a202c;
+            margin-bottom: 20px;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            max-width: 900px;
+            margin: 60px auto 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #cbd5e0;
+            z-index: 0;
+        }
+
+        .timeline-item {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-dot {
+            width: 40px;
+            height: 40px;
+            background-color: #3182ce;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            border: 4px solid #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-label {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2d3748;
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            main {
+                margin-top: 150px;
+            }
+
+            .page-hero h1 {
+                font-size: 36px;
+            }
+
+            .product-title,
+            .testimonials-title,
+            .market-title,
+            .roadmap-title {
+                font-size: 32px;
+            }
+
+            .product-features {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-title {
+                font-size: 20px;
+            }
+
+            .feature-description {
+                font-size: 16px;
+            }
+
+            .testimonials {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-quote {
+                font-size: 18px;
+            }
+
+            .market-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .timeline::before {
+                top: 0;
+                bottom: 0;
+                left: 50%;
+                width: 2px;
+                height: auto;
+            }
+        }
+
+        /* スクロールアニメーション */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">FitWith</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">トップページ</a></li>
+                    <li><a href="mission.html">私たちの想い</a></li>
+                    <li><a href="product.html">製品紹介</a></li>
+                    <li><a href="news.html">お知らせ</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero fade-in">
+            <h1>製品情報：Carry-Assist</h1>
+        </section>
+
+        <section class="product fade-in">
+            <div class="product-container">
+                <h2 class="product-title">その課題を、3つの独自機能で解決します</h2>
+                <div class="product-features">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <!-- SVGアイコン: 段差に強い3輪タイヤ -->
+                        </div>
+                        <h3 class="feature-title">段差に強い3輪タイヤ</h3>
+                        <p class="feature-description">
+                            階段や段差を検知し、タイヤが回転することでスムーズな昇降をアシストします。もう重い荷物を持ち上げる必要はありません。
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <!-- SVGアイコン: 安心のブレーキ機能 -->
+                        </div>
+                        <h3 class="feature-title">安心のブレーキ機能</h3>
+                        <p class="feature-description">
+                            坂道や階段の途中で、しっかりとカートを固定します。下る際の『ヒヤリ』とする心理的な恐怖を取り除き、安全な移動をサポートします。
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <!-- SVGアイコン: 簡単な「外付け」設計 -->
+                        </div>
+                        <h3 class="feature-title">簡単な「外付け」設計</h3>
+                        <p class="feature-description">
+                            今お使いの愛用のキャリーケースに、ご自身で簡単に取り付け可能。『便利』だけど『今使っているものを手放したくない』という声に応えました。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-section fade-in">
+            <div class="testimonials-container">
+                <h2 class="testimonials-title">体験者の87.6%が、その価値を実感</h2>
+                <div class="testimonials">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">「外付けなのが嬉しい」</div>
+                        <div class="testimonial-author">— 60代女性</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">「スムーズにのぼれそう」</div>
+                        <div class="testimonial-author">— 80代女性</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">「ブレーキがあるから安心だわ。今のより力いらなくて楽」</div>
+                        <div class="testimonial-author">— 70代女性</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="market fade-in">
+            <div class="market-container">
+                <h2 class="market-title">私たちの挑戦と未来</h2>
+                <div class="market-cards">
+                    <div class="market-card">
+                        <h3>117万人の『自立した移動』を支える</h3>
+                        <p>現在、歩行補助としてキャリーケースを使用している潜在顧客は国内に117万人存在します。これは約70億円の市場規模に相当します。</p>
+                    </div>
+                    <div class="market-card">
+                        <h3>トヨタ自動車の部品組立を担う企業との連携</h3>
+                        <p>製造は、高品質なものづくりで実績のある株式会社逸美様に委託を予定しており、安定した製品供給体制を構築します。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="roadmap fade-in">
+            <div class="roadmap-container">
+                <h2 class="roadmap-title">事業化に向けたロードマップ</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot">1</div>
+                        <div class="timeline-label">現在地<br>(2025年9月)<br>プロトタイプ検証</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">2</div>
+                        <div class="timeline-label">〜2025年12月<br>見込み顧客獲得2件<br>開発費資金調達準備</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">3</div>
+                        <div class="timeline-label">2026年2月〜<br>大学・技術者と共に開発<br>特許申請<br>最初の生産ロット(50台)完成</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">4</div>
+                        <div class="timeline-label">将来<br>資金調達2500万円<br>販売開始</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 FitWith. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const targets = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            targets.forEach(target => {
+                observer.observe(target);
+            });
+        });
+    </script>
+</body>
+</html>

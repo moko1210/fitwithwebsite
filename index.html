@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="FitWith Carry-Assist - 階段や段差の移動を安全にサポートする革新的なソリューション">
     <meta name="keywords" content="FitWith, Carry-Assist, バリアフリー, 段差解消, 車椅子サポート">
-    <title>FitWith - 世界から"段差"をなくす</title>
+    <title>FitWith - すべての人が、自由に移動できる世界へ</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
         /* リセットCSS */
@@ -16,9 +20,10 @@
         }
         
         body {
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Sans', sans-serif;
-            line-height: 1.6;
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.8;
             color: #333;
+            background-color: #ffffff;
         }
         
         /* ヘッダースタイル */
@@ -62,6 +67,14 @@
         
         nav a:hover {
             color: #2563eb;
+            transform: scale(1.05);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            transition: color 0.3s, transform 0.3s;
         }
         
         /* メインコンテンツの余白（ヘッダー分） */
@@ -131,7 +144,7 @@
         
         /* 課題提起セクションスタイル */
         .problem {
-            padding: 80px 20px;
+            padding: 100px 20px;
             background-color: #f7fafc;
         }
         
@@ -453,12 +466,12 @@
             .cta-title {
                 font-size: 32px;
             }
-            
+
             .timeline {
                 flex-direction: column;
                 gap: 40px;
             }
-            
+
             .timeline::before {
                 top: 0;
                 bottom: 0;
@@ -466,14 +479,215 @@
                 width: 2px;
                 height: auto;
             }
-            
+
             .cta-message {
                 font-size: 18px;
             }
-            
+
             .cta-button {
                 font-size: 20px;
                 padding: 16px 40px;
+            }
+        }
+
+        /* プロダクトセクションスタイル */
+        .product {
+            padding: 100px 20px;
+            background-color: #ffffff;
+        }
+
+        .product-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .product-title {
+            font-size: 48px;
+            font-weight: bold;
+            color: #1a202c;
+            margin-bottom: 60px;
+            line-height: 1.3;
+        }
+
+        .product-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background-color: #f8f9fa;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #2563eb;
+            border-radius: 50%;
+        }
+
+        .feature-icon-stairs::before {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-left: 4px solid white;
+            border-bottom: 4px solid white;
+            transform: rotate(-45deg) translateY(-8px);
+        }
+
+        .feature-icon-attach::before {
+            content: '';
+            display: block;
+            width: 35px;
+            height: 35px;
+            border: 4px solid white;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .feature-icon-attach::after {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 20px;
+            border: 4px solid white;
+            border-radius: 50%;
+            position: absolute;
+            right: -10px;
+            top: 7px;
+        }
+
+        .feature-icon-design::before {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 30px solid white;
+            position: relative;
+        }
+
+        .feature-icon-design::after {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 4px;
+            background-color: white;
+            position: absolute;
+            bottom: -15px;
+            left: -15px;
+        }
+
+        .feature-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+
+        .feature-description {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #4a5568;
+        }
+
+        @media (max-width: 768px) {
+            .product-title {
+                font-size: 32px;
+            }
+
+            .product-features {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-title {
+                font-size: 20px;
+            }
+
+            .feature-description {
+                font-size: 16px;
+            }
+        }
+
+        /* スクロールアニメーション */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ニュースハイライトセクション */
+        .news-highlight {
+            padding: 100px 20px;
+            background-color: #ffffff;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        /* 証言（お客様の声）セクションスタイル */
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px auto;
+            max-width: 1000px;
+        }
+
+        .testimonial-card {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-quote {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-size: 16px;
+            color: #718096;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .testimonials {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-quote {
+                font-size: 18px;
             }
         }
     </style>
@@ -485,9 +699,11 @@
             <a href="#" class="logo">FitWith</a>
             <nav>
                 <ul>
-                    <li><a href="#about">私たちの想い</a></li>
-                    <li><a href="#product">製品紹介</a></li>
-                    <li><a href="#contact">お問い合わせ</a></li>
+                    <li><a href="index.html">トップページ</a></li>
+                    <li><a href="mission.html">私たちの想い</a></li>
+                    <li><a href="product.html">製品紹介</a></li>
+                    <li><a href="news.html">お知らせ</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
                 </ul>
             </nav>
         </div>
@@ -497,111 +713,71 @@
         <!-- 2. ヒーローセクション: 心を掴むキャッチコピーと製品コンセプトのビジュアル -->
         <section class="hero">
             <div class="hero-content">
-                <h1 class="hero-title">世界から"段差"をなくす</h1>
+                <h1 class="hero-title">すべての人が、自分のタイミングで・自力で・自由に移動できる世界へ</h1>
                 <p class="hero-subtitle">
-                    愛用のキャリーケースに後付け可能なアシストユニット『Carry-Assist』。<br>
-                    もう、持ち上げない。引くだけで、いかなる階段もスムーズに。
+                    愛用のキャリーケースに後付けできる<strong>『キャリーケースアシスター』</strong>。<br>
+                    障がい者・高齢者の、段差・階段の昇降をもっと楽に、もっと安全に。
                 </p>
-                <div class="hero-image">
-                    製品イメージプレースホルダー
+                <div class="hero-video-container" style="position: relative; width: 100%; max-width: 800px; height: 500px; border-radius: 15px; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);">
+                    <video
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        style="width: 100%; height: 100%; object-fit: cover;"
+                        poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23e2e8f0'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23718096' font-size='20'%3E動画読み込み中...%3C/text%3E%3C/svg%3E">
+                        <source src="videos/hero_demo.mp4" type="video/mp4">
+                        <div style="width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.9); display: flex; align-items: center; justify-content: center; font-size: 20px; color: #666;">プロトタイプの動作イメージ</div>
+                    </video>
                 </div>
             </div>
         </section>
     
     <!-- 3. 課題提起セクション: 創業者の原体験を基に、ユーザーの共感を呼ぶストーリー -->
-        <section class="problem" id="about">
+        <section class="problem fade-in" id="about">
             <div class="problem-container">
-                <h2 class="problem-title">その『絶望』が、私たちの原動力になった</h2>
+                <h2 class="problem-title">私たちが解決する課題</h2>
                 <div class="problem-story">
-                    <p>日比谷駅の長い階段。重い荷物を前に、ただ立ち尽くすしかなかった悔しさ、惨めさ。</p>
-                    <p>これは、私だけの問題ではないのではないか――</p>
-                    <p>日本では、約1,500万人が車椅子や歩行補助器具を使用し、</p>
-                    <p>多くの人が階段や段差によって移動の自由を制限されています。</p>
-                    <p>海外旅行、ビジネス出張、日常の買い物――</p>
-                    <p>誰もが当たり前に楽しめることが、一部の人にとっては「挑戦」になってしまう。</p>
+                    <p>代表・小代の「自力で自分のタイミングで移動したい」という原体験から始まったこのプロジェクト。この想いは、決して特別なものではありませんでした。</p>
+                    <p>障がい者・高齢者40名への対面ヒアリングを実施した結果、<strong>80%が「自力で移動したい」と回答</strong>しました。</p>
+                    <p>多くの方がキャリーケースを「杖代わり」として使用していますが、<strong>72.8%が「階段を使わなければいけない場面がよくある」</strong>と回答。特に階段の下りには心理的恐怖を感じており、「出たい所にエレベーターがない」状況に直面しています。</p>
                 </div>
-                <p class="problem-highlight">だから私たちは、テクノロジーの力でこの問題を解決します</p>
+                <div style="margin-top: 40px; text-align: center;">
+                    <a href="mission.html" style="display: inline-block; padding: 15px 30px; background-color: #2563eb; color: white; text-decoration: none; border-radius: 30px; font-weight: bold; transition: all 0.3s; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">私たちの想いを詳しく見る</a>
+                </div>
             </div>
         </section>
     
     <!-- 4. ソリューション（製品紹介）セクション: 「Carry-Assist」の3つの主要な機能を分かりやすく紹介 -->
-    
-    <!-- 5. 使用イメージセクション: 製品がどのように使われるか想像できるイラストや画像の配置エリア -->
-        <section class="usage">
-            <div class="usage-container">
-                <h2 class="usage-title">あなたの日常が、もっと自由に</h2>
-                <div class="usage-image">
-                    キャリーケースにCarry-Assistを装着し、<br>
-                    駅の階段を楽々と昇る高齢者のイメージ
+        <section class="product fade-in" id="product">
+            <div class="product-container">
+                <h2 class="product-title">課題を解決する私たちの製品</h2>
+                <div class="product-features">
+                    <div class="feature-card">
+                        <div class="feature-icon feature-icon-stairs"></div>
+                        <h3 class="feature-title">段差に強い3輪タイヤ</h3>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon feature-icon-attach"></div>
+                        <h3 class="feature-title">安心のブレーキ機能</h3>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon feature-icon-design"></div>
+                        <h3 class="feature-title">簡単な「外付け」設計</h3>
+                    </div>
+                </div>
+                <div style="margin-top: 50px; text-align: center;">
+                    <a href="product.html" style="display: inline-block; padding: 15px 30px; background-color: #2563eb; color: white; text-decoration: none; border-radius: 30px; font-weight: bold; transition: all 0.3s; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">製品について詳しく知る</a>
                 </div>
             </div>
         </section>
-    
-    <!-- 6. チーム紹介セクション: プロジェクトチームの信頼性を示す -->
-        <section class="team">
-            <div class="team-container">
-                <h2 class="team-title">私たちのチーム</h2>
-                <p class="team-subtitle">当事者の情熱 × 技術のプロ × ビジネスのプロ</p>
-                <div class="team-members">
-                    <div class="member-card">
-                        <div class="member-photo">顔写真</div>
-                        <h3 class="member-name">小代 氏</h3>
-                        <p class="member-role">プロダクトオーナー</p>
-                    </div>
-                    <div class="member-card">
-                        <div class="member-photo">顔写真</div>
-                        <h3 class="member-name">三浦 氏</h3>
-                        <p class="member-role">技術責任者</p>
-                    </div>
-                    <div class="member-card">
-                        <div class="member-photo">顔写真</div>
-                        <h3 class="member-name">稲吉 氏</h3>
-                        <p class="member-role">デザイナー</p>
-                    </div>
-                    <div class="member-card">
-                        <div class="member-photo">顔写真</div>
-                        <h3 class="member-name">渡辺 氏</h3>
-                        <p class="member-role">ビジネス開発</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    
-    <!-- 7. ロードマップセクション: プロジェクトの将来性を示し、期待感を醸成する -->
-        <section class="roadmap">
-            <div class="roadmap-container">
-                <h2 class="roadmap-title">未来への道のり</h2>
-                <p class="roadmap-subtitle">STAPSの支援を受け、アイデアは形へ</p>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot">1</div>
-                        <div class="timeline-label">プロトタイプ完成</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot">2</div>
-                        <div class="timeline-label">実証実験</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot">3</div>
-                        <div class="timeline-label">量産化設計</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot">4</div>
-                        <div class="timeline-label">生産・販売開始</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    
-    <!-- 8. CTA（行動喚起）セクション: ユーザーヒアリングへの参加を促す -->
-        <section class="cta" id="contact">
-            <div class="cta-container">
-                <h2 class="cta-title">あなたの『声』が、未来の移動を創る</h2>
-                <p class="cta-message">
-                    Carry-Assistの改善のため、<br>
-                    ぜひあなたの経験やご意見をお聞かせください。
-                </p>
-                <a href="#" class="cta-button">ヒアリングに参加する</a>
+
+    <!-- 5. お知らせセクション: 最新情報へのリンク -->
+        <section class="news-highlight fade-in">
+            <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+                <h2 style="font-size: 48px; font-weight: bold; color: #1a202c; margin-bottom: 30px;">最新のお知らせ</h2>
+                <p style="font-size: 20px; color: #4a5568; margin-bottom: 40px;">FitWithの最新の活動状況をお知らせします</p>
+                <a href="news.html" style="display: inline-block; padding: 15px 30px; background-color: #2563eb; color: white; text-decoration: none; border-radius: 30px; font-weight: bold; transition: all 0.3s; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">お知らせを見る</a>
             </div>
         </section>
     
@@ -609,8 +785,25 @@
     
     <!-- 9. フッター: 基本情報の記載 -->
     <footer>
-        <p>© 2025 FitWith. All Rights Reserved.</p>
+        <p>© 2024 FitWith. All Rights Reserved.</p>
     </footer>
-    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const targets = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            targets.forEach(target => {
+                observer.observe(target);
+            });
+        });
+    </script>
+
 </body>
 </html>
