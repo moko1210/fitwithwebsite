@@ -75,6 +75,16 @@ FitWithの革新的ソリューション「Carry-Assist」を紹介する**ユ�
 
 ## 🛠️ 開発・デプロイメント
 
+### 素材のセットアップ ⚠️ 重要
+サイトで使用する画像・動画素材の変換と配置が必要です。
+
+**詳細な手順は [ASSET_SETUP.md](./ASSET_SETUP.md) を参照してください。**
+
+#### 必要な作業
+- `src/プロトタイプ.heic` → `images/prototype.jpg` に変換
+- `src/*.MOV` / `*.mov` → `videos/*.mp4` に変換
+- PDFから画像を抽出して配置
+
 ### ローカル開発
 ```bash
 # リポジトリクローン
@@ -96,10 +106,15 @@ FitWith_prototype/
 ├── contact.html       # 問い合わせ
 ├── .mcp.json          # MCP設定
 ├── CLAUDE.md          # 開発指示書（マーケティング視点）
+├── ASSET_SETUP.md     # 素材変換・配置ガイド ⚠️
 ├── README.md          # このファイル
-├── images/            # 画像ファイル（今後追加）
-└── videos/            # 動画ファイル（今後追加）
-    └── hero_demo.mp4
+├── src/               # 変換前の素材ファイル
+│   ├── *.heic        # HEIC画像（要変換）
+│   ├── *.MOV/*.mov   # MOV動画（要変換）
+│   └── *.pdf         # PDFファイル
+├── images/            # 変換済み画像ファイル
+│   └── character_icon.png ✅
+└── videos/            # 変換済み動画ファイル
 ```
 
 ## 📊 パフォーマンス・SEO
