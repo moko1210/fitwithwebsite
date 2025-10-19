@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carry-Assist - 自由な移動を、すべての人に</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/animations.css">
+  <link rel="stylesheet" href="styles/header-footer.css">
+  <link rel="stylesheet" href="styles/hero.css">
+  <link rel="stylesheet" href="styles/three-viewer.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">
+            <h1>Carry-Assist</h1>
+          </a>
+        </div>
+
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">トップ</a></li>
+            <li><a href="product.html" class="nav-link">製品詳細</a></li>
+            <li><a href="mission.html" class="nav-link">開発ストーリー</a></li>
+            <li><a href="news.html" class="nav-link">お知らせ</a></li>
+            <li><a href="contact.html" class="nav-link cta">お問い合わせ</a></li>
+          </ul>
+        </nav>
+
+        <button class="hamburger" aria-label="メニュー" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-image-container">
+        <!-- プレースホルダー画像（実際の画像は020で変換後に置き換え） -->
+        <picture>
+          <source media="(min-width: 1200px)" srcset="https://via.placeholder.com/1920x1080/4CAF50/ffffff?text=Carry-Assist+Desktop" type="image/jpeg">
+          <source media="(min-width: 768px)" srcset="https://via.placeholder.com/1024x768/4CAF50/ffffff?text=Carry-Assist+Tablet" type="image/jpeg">
+          <img src="https://via.placeholder.com/750x1334/4CAF50/ffffff?text=Carry-Assist+Mobile" alt="Carry-Assist 使用イメージ" class="hero-image">
+        </picture>
+        <div class="hero-overlay"></div>
+      </div>
+
+      <div class="hero-content">
+        <h1 class="hero-title fade-in">
+          すべての人が、自分のタイミングで・自力で・自由に移動できる世界へ
+        </h1>
+        <p class="hero-subtitle fade-in">
+          愛用のキャリーケースに後付けできる『Carry-Assist』<br>
+          段差・階段の昇降をもっと楽に、もっと安全に。
+        </p>
+        <a href="#3d-experience" class="cta-button primary fade-in">
+          製品を360°体験する
+        </a>
+      </div>
+    </section>
+
+    <!-- Empathy Section（既存のものを保持） -->
+    <section class="empathy-section">
+      <div class="container">
+        <h2 class="empathy-title">そのキャリーケース、「怖い」「大変」と感じたことはありませんか？</h2>
+
+        <div class="empathy-cards">
+          <div class="empathy-card">
+            <div class="problem-side">
+              <div class="problem-icon">😰</div>
+              <h3>階段での恐怖</h3>
+              <p>重いキャリーケースが階段で制御できず、転倒しそうになった経験…</p>
+            </div>
+            <div class="solution-side">
+              <div class="solution-icon">✨</div>
+              <h3>こう変わります</h3>
+              <p>3輪タイヤとブレーキが段差をスムーズにサポート。恐怖から解放されます。</p>
+            </div>
+          </div>
+
+          <div class="empathy-card">
+            <div class="problem-side">
+              <div class="problem-icon">😔</div>
+              <h3>坂道の悩み</h3>
+              <p>ちょっとした坂道でキャリーケースが重くて、手が痛くなる…</p>
+            </div>
+            <div class="solution-side">
+              <div class="solution-icon">💪</div>
+              <h3>こう変わります</h3>
+              <p>アシスト機構が坂道も楽々。まるで平地のように移動できます。</p>
+            </div>
+          </div>
+
+          <div class="empathy-card">
+            <div class="problem-side">
+              <div class="problem-icon">😥</div>
+              <h3>長距離移動の不安</h3>
+              <p>旅行先の長い移動、体力が持つか不安で諦めてしまう…</p>
+            </div>
+            <div class="solution-side">
+              <div class="solution-icon">🛍️</div>
+              <h3>こう変わります</h3>
+              <p>荷物のことは忘れ、景色や会話を心の底から楽しめます。</p>
+            </div>
+          </div>
+
+          <div class="empathy-card">
+            <div class="problem-side">
+              <div class="problem-icon">😟</div>
+              <h3>人に頼りたくない</h3>
+              <p>「迷惑をかけたくない」という気持ちが、外出そのものを億劫に…</p>
+            </div>
+            <div class="solution-side">
+              <div class="solution-icon">🌟</div>
+              <h3>こう変わります</h3>
+              <p>移動の負担が自信に変わり、行きたい場所に、行きたい時に行けるように。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3D Experience Section -->
+    <section id="3d-experience" class="canvas-section">
+      <div class="section-header">
+        <h2>製品を360°体験してみましょう</h2>
+        <p>マウスを動かして、Carry-Assistのすべてを確認できます</p>
+      </div>
+
+      <div class="canvas-container" id="canvas-container">
+        <div class="loading-indicator" id="loading">3Dモデルを読み込み中...</div>
+        <canvas id="three-canvas"></canvas>
+
+        <div class="interaction-hint">
+          <span>🖱️ マウスを動かして製品を回転</span>
+          <span>📱 スワイプで操作</span>
+        </div>
+
+        <!-- ホットスポット -->
+        <div class="hotspot" data-feature="motor" style="left: 45%; top: 60%;">
+          <div class="hotspot-marker">+</div>
+          <div class="hotspot-popup">
+            <h4>⚡ アシスト機構</h4>
+            <p>坂道や階段もサポート。軽い力で楽に移動可能。</p>
+          </div>
+        </div>
+
+        <div class="hotspot" data-feature="wheel" style="left: 30%; top: 80%;">
+          <div class="hotspot-marker">+</div>
+          <div class="hotspot-popup">
+            <h4>🎯 多方向移動タイヤ</h4>
+            <p>3輪タイヤで段差をスムーズに乗り越え。安定性抜群。</p>
+          </div>
+        </div>
+
+        <div class="hotspot" data-feature="brake" style="left: 55%; top: 75%;">
+          <div class="hotspot-marker">+</div>
+          <div class="hotspot-popup">
+            <h4>🛡️ 安全ブレーキ</h4>
+            <p>下り坂でも安心。速度を自動制御します。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 背景アニメーション -->
+      <div class="background-animation">
+        <svg class="obstacle-path" viewBox="0 0 1200 300">
+          <path id="difficult-path" d="M0,150 Q300,50 600,150 T1200,150" stroke="#e0e0e0" stroke-width="3" fill="none" opacity="0.3"/>
+          <path id="smooth-path" d="M0,150 L1200,150" stroke="#38a169" stroke-width="3" fill="none" opacity="0"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Joy Section -->
+    <section class="joy-section">
+      <div class="container">
+        <h2 class="section-title fade-in">
+          その悩み、愛用のカートに「付けるだけ」で、驚くほど軽やかに。
+        </h2>
+
+        <div class="joy-cards">
+          <div class="joy-card fade-in">
+            <div class="joy-image">
+              <img src="images/prototype.jpg" alt="Carry-Assist プロトタイプ" loading="lazy">
+            </div>
+            <div class="joy-content">
+              <h3>🚶‍♀️ 坂道も階段も、まるで平地のように</h3>
+              <p>
+                3輪タイヤとアシスト機構で、坂道も楽々。<br>
+                「今まで避けていた場所に、行けるようになった」
+              </p>
+              <a href="#3d-experience" class="view-3d-link">3Dで機能を確認 →</a>
+            </div>
+          </div>
+
+          <div class="joy-card fade-in">
+            <div class="joy-image">
+              <img src="https://via.placeholder.com/600x400/4CAF50/ffffff?text=Brake+Demo" alt="ブレーキ機能デモ" loading="lazy">
+            </div>
+            <div class="joy-content">
+              <h3>🛡️ 安心のブレーキで、下り坂も怖くない</h3>
+              <p>
+                速度をコントロールするブレーキ機能。急な坂でも、安全に降りられます。
+              </p>
+              <a href="product.html#brake" class="detail-link">ブレーキ詳細 →</a>
+            </div>
+          </div>
+
+          <div class="joy-card fade-in">
+            <div class="joy-image">
+              <img src="https://via.placeholder.com/600x400/4CAF50/ffffff?text=Easy+Install" alt="簡単取り付け" loading="lazy">
+            </div>
+            <div class="joy-content">
+              <h3>🔧 工具不要！わずか3分で取り付け</h3>
+              <p>
+                お持ちのキャリーケースに、ベルトで固定するだけ。<br>
+                専門知識は一切不要です。
+              </p>
+              <a href="product.html#howto" class="detail-link">使い方を見る →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section（既存のものを一旦保持） -->
+    <div class="features-section">
+      <div class="feature-card">
+        <h3>荷物を運ぶ負担ゼロ</h3>
+        <p>わずか2kg程度の力で、重い荷物も楽々移動</p>
+      </div>
+      <div class="feature-card">
+        <h3>どこまででも歩いていける</h3>
+        <p>坂道、階段、段差も安心のアシスト機能</p>
+      </div>
+      <div class="feature-card">
+        <h3>世界が広がる</h3>
+        <p>行動範囲の制限から解放され、新たな可能性へ</p>
+      </div>
+    </div>
+
+    <!-- Pricing Section（既存のものを保持） -->
+    <div class="pricing-section">
+      <h2>価格プラン</h2>
+      <p class="pricing-subtitle">あなたのニーズに合わせた最適なプランをお選びください</p>
+      <div class="pricing-container">
+        <div class="price-card">
+          <h3>キャリーケース一体型</h3>
+          <div class="price">¥148,000</div>
+          <ul class="price-features">
+            <li>軽量カーボンファイバー製</li>
+            <li>最大20kgアシスト</li>
+            <li>連続使用時間: 約8時間</li>
+            <li>USB充電ポート付き</li>
+            <li>2年間保証付き</li>
+          </ul>
+          <a href="contact.html" class="price-button">お問い合わせ</a>
+        </div>
+        <div class="price-card featured">
+          <div class="badge">人気No.1</div>
+          <h3>後付けユニット</h3>
+          <div class="price">¥78,000</div>
+          <ul class="price-features">
+            <li>お持ちのキャリーケースに装着可能</li>
+            <li>最大15kgアシスト</li>
+            <li>連続使用時間: 約6時間</li>
+            <li>工具不要で簡単取付</li>
+            <li>1年間保証付き</li>
+          </ul>
+          <a href="contact.html" class="price-button primary">お問い合わせ</a>
+        </div>
+        <div class="price-card">
+          <h3>レンタルプラン</h3>
+          <div class="price">¥5,800<span>/月</span></div>
+          <ul class="price-features">
+            <li>最短1ヶ月から利用可能</li>
+            <li>メンテナンス費込み</li>
+            <li>故障時の交換保証</li>
+            <li>旅行時の短期レンタルも対応</li>
+            <li>送料無料</li>
+          </ul>
+          <a href="contact.html" class="price-button">お問い合わせ</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>製品情報</h4>
+          <ul>
+            <li><a href="product.html#features">特徴・機能</a></li>
+            <li><a href="product.html#specs">製品仕様</a></li>
+            <li><a href="product.html#faq">よくある質問</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>サポート</h4>
+          <ul>
+            <li><a href="manual.html">取扱説明書</a></li>
+            <li><a href="warranty.html">保証について</a></li>
+            <li><a href="repair.html">修理・メンテナンス</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>企業情報</h4>
+          <ul>
+            <li><a href="mission.html">開発ストーリー</a></li>
+            <li><a href="news.html">お知らせ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>フォローする</h4>
+          <div class="social-links">
+            <a href="#" aria-label="Twitter">T</a>
+            <a href="#" aria-label="Facebook">F</a>
+            <a href="#" aria-label="Instagram">I</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 FitWith Carry-Assist. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="privacy.html">プライバシーポリシー</a>
+          <a href="terms.html">利用規約</a>
+          <a href="legal.html">特定商取引法に基づく表記</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/hotspots.js"></script>
+  <script src="scripts/three-viewer.js"></script>
+</body>
+</html>

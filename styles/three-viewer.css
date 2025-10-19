@@ -1,0 +1,296 @@
+/* ===================================
+   Three.js 3D Viewer Styles
+   3Dビューワー専用スタイル
+   =================================== */
+
+.canvas-section {
+  position: relative;
+  padding: var(--spacing-xl) 0;
+  background: radial-gradient(ellipse at center, #ffffff 0%, #f5f5f5 100%);
+  overflow: hidden;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.section-header h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+}
+
+.canvas-container {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+#three-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.loading-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  color: var(--color-text-light);
+  background: rgba(255, 255, 255, 0.9);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-sm);
+  z-index: 100;
+}
+
+.interaction-hint {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: var(--color-white);
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  display: flex;
+  gap: 20px;
+  opacity: 0;
+  animation: fadeInOut 5s ease-in-out;
+  z-index: 5;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  20%, 80% { opacity: 1; }
+}
+
+/* ===== ホットスポット ===== */
+
+.hotspot {
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.hotspot-marker {
+  width: 30px;
+  height: 30px;
+  background: rgba(76, 175, 80, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-weight: bold;
+  font-size: 1.5rem;
+  transition: transform var(--transition-base);
+  box-shadow: 0 3px 10px rgba(76, 175, 80, 0.5);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 3px 10px rgba(76, 175, 80, 0.5);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.7);
+  }
+}
+
+.hotspot:hover .hotspot-marker {
+  transform: scale(1.2);
+  background: rgba(76, 175, 80, 1);
+}
+
+.hotspot-popup {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: var(--color-white);
+  padding: 15px 20px;
+  border-radius: var(--radius-sm);
+  min-width: 250px;
+  max-width: 300px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-base), transform var(--transition-base);
+  box-shadow: var(--shadow-lg);
+  transform: translateX(-50%) translateY(10px);
+}
+
+.hotspot:hover .hotspot-popup,
+.hotspot.active .hotspot-popup {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.hotspot-popup h4 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: var(--color-white);
+}
+
+.hotspot-popup p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ポップアップの矢印 */
+.hotspot-popup::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid rgba(0, 0, 0, 0.9);
+}
+
+/* ===== 背景アニメーション ===== */
+
+.background-animation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.obstacle-path {
+  width: 100%;
+  height: 100%;
+}
+
+.obstacle-path path {
+  transition: opacity 0.5s ease-in-out;
+}
+
+#smooth-path {
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* ===== レスポンシブ対応 ===== */
+
+@media (max-width: 768px) {
+  .canvas-section {
+    padding: var(--spacing-lg) 0;
+  }
+
+  .canvas-container {
+    height: 400px;
+  }
+
+  .interaction-hint {
+    flex-direction: column;
+    gap: 5px;
+    font-size: 0.8rem;
+    padding: 8px 15px;
+  }
+
+  .hotspot-marker {
+    width: 25px;
+    height: 25px;
+    font-size: 1.2rem;
+  }
+
+  .hotspot-popup {
+    min-width: 200px;
+    max-width: 250px;
+    font-size: 0.85rem;
+    padding: 12px 15px;
+  }
+
+  .hotspot-popup h4 {
+    font-size: 1rem;
+  }
+
+  .hotspot-popup p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .canvas-container {
+    height: 350px;
+  }
+
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .section-header p {
+    font-size: 0.95rem;
+  }
+
+  .hotspot-popup {
+    min-width: 180px;
+    max-width: 220px;
+  }
+}
+
+/* ===== タッチデバイス対応 ===== */
+
+@media (hover: none) and (pointer: coarse) {
+  .hotspot-marker {
+    animation: none; /* タッチデバイスではパルスアニメーションを停止 */
+  }
+
+  .hotspot.active .hotspot-marker {
+    transform: scale(1.2);
+    background: rgba(76, 175, 80, 1);
+  }
+}
+
+/* ===== アクセシビリティ ===== */
+
+.hotspot:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 5px;
+  border-radius: 50%;
+}
+
+.hotspot:focus .hotspot-popup {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ===== デスクトップ大画面対応 ===== */
+
+@media (min-width: 1920px) {
+  .canvas-container {
+    height: 700px;
+    max-width: 1400px;
+  }
+
+  .section-header h2 {
+    font-size: 3rem;
+  }
+
+  .section-header p {
+    font-size: 1.3rem;
+  }
+}

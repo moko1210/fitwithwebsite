@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nユーザー視点への大幅刷新: 投資家向けから顧客向けマーケティングサイトへ全面改修\n\n- index.html: 課題提起を「悩みへの共感」に、ソリューションを「喜びの体験」に変更\n- mission.html: ページタイトルを「開発ストーリー」に変更、チーム紹介削除\n- product.html: 競合比較・市場規模・ロードマップ削除、3ステップ使い方とQ&A追加\n- contact.html: 問い合わせ種別をユーザー向けに簡略化(3項目)\n- CLAUDE.md: マーケティング視点強化の指示書に全面更新\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nREADME更新: ユーザー視点のプロダクトマーケティングサイトに改訂\n\n- プロジェクト概要: コーポレートサイト→プロダクトマーケティングサイトに変更\n- プロジェクトの目的: 投資家獲得からユーザー獲得・購入促進に変更\n- サイト構成: 各ページの内容を最新の変更に合わせて更新\n  - index.html: 悩みへの共感、喜びの体験を追加\n  - mission.html: 開発ストーリーに変更、チーム紹介削除を反映\n  - product.html: 3ステップ使い方、Q&A追加を反映\n  - contact.html: シンプルな3種類の問い合わせ種別を反映\n- マーケティング戦略セクション新設: ターゲット顧客とメッセージング方針を明記\n- 開発チームセクション削除: ユーザー視点に集中\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "mcp__playwright__browser_take_screenshot",
+      "Bash(mkdir:*)",
+      "Bash(cp:*)",
+      "Bash(ffmpeg:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nサイト刷新: ナビゲーション更新と素材セットアップガイド追加\n\n- 全HTMLファイルのナビゲーション: 「私たちの想い」→「開発ストーリー」に変更\n- ASSET_SETUP.md 新規作成: 画像・動画素材の変換手順を詳細に記載\n- README.md 更新: 素材セットアップセクション追加、ファイル構成更新\n- images/フォルダ作成: character_icon.png 配置完了\n- videos/フォルダ作成: MP4変換用の準備完了\n\n次のステップ: ASSET_SETUP.mdに従って素材ファイルの変換を実施\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "mcp__playwright__browser_navigate",
+      "Bash(test:*)",
+      "Bash(git init:*)",
+      "Bash(git remote add:*)",
+      "Bash(git fetch:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "supabase",
+    "context7",
+    "serena",
+    "playwright"
+  ]
+}
