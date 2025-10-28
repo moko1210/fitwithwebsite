@@ -75,15 +75,15 @@ FitWithの革新的ソリューション「Carry-Assist」を紹介する**ユ�
 
 ## 🛠️ 開発・デプロイメント
 
-### 素材のセットアップ ⚠️ 重要
-サイトで使用する画像・動画素材の変換と配置が必要です。
+### 素材のセットアップ ✅ 完了
+サイトで使用する画像・動画素材の変換と配置が完了しました。
 
 **詳細な手順は [ASSET_SETUP.md](./ASSET_SETUP.md) を参照してください。**
 
-#### 必要な作業
-- `src/プロトタイプ.heic` → `images/prototype.jpg` に変換
-- `src/*.MOV` / `*.mov` → `videos/*.mp4` に変換
-- PDFから画像を抽出して配置
+#### 完了した作業
+- ✅ `src/プロトタイプ.heic` → `images/prototype.jpg` に変換完了
+- ✅ `src/*.MOV` / `*.mov` → `videos/*.mp4` に変換完了（4ファイル）
+- ✅ PDFから画像を抽出して配置完了（Koshiro氏の写真、ピクトグラム）
 
 ### ローカル開発
 ```bash
@@ -109,12 +109,19 @@ FitWith_prototype/
 ├── ASSET_SETUP.md     # 素材変換・配置ガイド ⚠️
 ├── README.md          # このファイル
 ├── src/               # 変換前の素材ファイル
-│   ├── *.heic        # HEIC画像（要変換）
-│   ├── *.MOV/*.mov   # MOV動画（要変換）
+│   ├── *.heic        # HEIC画像（変換済み）
+│   ├── *.MOV/*.mov   # MOV動画（変換済み）
 │   └── *.pdf         # PDFファイル
-├── images/            # 変換済み画像ファイル
-│   └── character_icon.png ✅
-└── videos/            # 変換済み動画ファイル
+├── images/            # 変換済み画像ファイル ✅
+│   ├── character_icon.png       # キャラクターアイコン
+│   ├── prototype.jpg           # プロトタイプ製品写真
+│   ├── story_koshiro.jpg       # 代表・小代氏の写真
+│   └── pictogram_fall.png      # 転倒危険ピクトグラム（未使用）
+└── videos/            # 変換済み動画ファイル ✅
+    ├── hero_demo.mp4           # トップページヒーロー動画
+    ├── how_to_use.mp4          # 使い方デモ動画
+    ├── story_before_up.mp4     # 階段を上る様子
+    └── story_before_down.mp4   # 階段を下る様子
 ```
 
 ## 📊 パフォーマンス・SEO
@@ -139,7 +146,7 @@ FitWith_prototype/
 - **Phase 1**: 基本サイト構築 ✅
 - **Phase 2**: モダン化・5ページ構成 ✅
 - **Phase 3**: ユーザー視点への全面刷新 ✅
-- **Phase 4**: リッチコンテンツ追加（動画・写真） 🔄
+- **Phase 4**: リッチコンテンツ追加（動画・写真） ✅
 - **Phase 5**: CMS化・運用体制 📋
 
 ## 📈 マーケティング戦略
@@ -160,10 +167,10 @@ FitWith_prototype/
 
 - **GitHub**: https://github.com/moko1210/FitWith_prototype
 - **STAPS**: 起業家育成プログラム
-- **お問い合わせ**: contact@fitwith.example.com
+- **お問い合わせ**: fitwith.koshiro@gmail.com
 
 ## 📝 ライセンス
-© 2024 FitWith. All Rights Reserved.
+© 2025 FitWith. All Rights Reserved.
 
 ---
 
