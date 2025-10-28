@@ -165,7 +165,7 @@ FitWith_prototype/
 
 ## 🔗 関連リンク
 
-- **GitHub**: https://github.com/moko1210/FitWith_prototype
+- **GitHub**: https://github.com/moko1210/fitwithwebsite
 - **STAPS**: 起業家育成プログラム
 - **お問い合わせ**: fitwith.koshiro@gmail.com
 
