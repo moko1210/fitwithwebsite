@@ -74,6 +74,35 @@
             transition: color 0.3s, transform 0.3s;
         }
 
+        /* ハンバーガーメニュー */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #2563eb;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
         main {
             margin-top: 80px;
         }
@@ -215,18 +244,48 @@
 
         @media (max-width: 768px) {
             .header-container {
-                flex-direction: column;
-                gap: 15px;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            nav {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: #ffffff;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
+            }
+
+            nav.active {
+                max-height: 400px;
             }
 
             nav ul {
                 flex-direction: column;
                 text-align: center;
-                gap: 15px;
+                gap: 0;
+                padding: 20px 0;
+            }
+
+            nav ul li {
+                padding: 15px 0;
+                border-bottom: 1px solid #e2e8f0;
+            }
+
+            nav ul li:last-child {
+                border-bottom: none;
             }
 
             main {
-                margin-top: 150px;
+                margin-top: 80px;
             }
 
             .page-hero h1 {
@@ -280,7 +339,12 @@
     <header>
         <div class="header-container">
             <a href="index.html" class="logo">FitWith</a>
-            <nav>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav id="nav">
                 <ul>
                     <li><a href="index.html">トップページ</a></li>
                     <li><a href="mission.html">開発ストーリー</a></li>
@@ -340,6 +404,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // スクロールアニメーション
             const targets = document.querySelectorAll('.fade-in');
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
@@ -351,6 +416,24 @@
             }, { threshold: 0.1 });
             targets.forEach(target => {
                 observer.observe(target);
+            });
+
+            // ハンバーガーメニュー
+            const hamburger = document.getElementById('hamburger');
+            const nav = document.getElementById('nav');
+
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                nav.classList.toggle('active');
+            });
+
+            // メニューリンクをクリックしたらメニューを閉じる
+            const navLinks = nav.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    nav.classList.remove('active');
+                });
             });
         });
     </script>
